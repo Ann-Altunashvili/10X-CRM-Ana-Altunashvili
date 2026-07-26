@@ -1,5 +1,9 @@
 # 10X CRM
 
+**Student Name:** Ana Altunashvili  
+**Repository:** 10x-crm-Ana-Altunashvili 
+**Live Demo:** [https://10-x-crm-ana-altunashvili-exam.vercel.app]
+
 A small client-relationship-management tool built as a JavaScript exam project. Sign up, log in, and manage a pipeline of clients — track their status (Lead → Contacted → Won/Lost), deal value, and notes, with a dashboard summarizing the whole pipeline at a glance.
 
 ## Features
@@ -33,25 +37,28 @@ Vanilla HTML, CSS, and JavaScript — no frameworks, no build step. Data lives i
 
 ```
 10x-crm/
-├── index.html          # Login
-├── signup.html         # Sign Up
-├── dashboard.html       # Dashboard
-├── clients.html         # Clients
-├── profile.html         # Profile
+├── index.html          # Login page (P2)
+├── signup.html         # Sign Up page (P1)
+├── dashboard.html      # Dashboard page (P3)
+├── clients.html        # Clients management page (P4)
+├── profile.html        # Profile & settings page (P5)
 ├── css/
-│   └── style.css        # design system: theme variables, components
-└── js/
-    ├── storage.js        # single point of contact with localStorage
-    ├── guard.js          # route protection (requireAuth / redirectIfAuthed)
-    ├── validation.js      # shared field-error helpers
-    ├── ui.js              # shared render helpers (avatars, badges, money)
-    ├── nav.js             # sidebar, theme toggle, logout
-    ├── toast.js           # notification system
-    ├── data.js            # API calls + client data shaping
-    ├── auth.js            # Sign Up / Login logic
-    ├── clients.js          # Clients page logic
-    ├── dashboard.js        # Dashboard page logic
-    └── profile.js          # Profile page logic
+│   └── style.css       # Global design system, theme variables, and components
+├── js/
+│   ├── storage.js      # Wrapper for localStorage interactions
+│   ├── guard.js        # Auth Guard & session route protection
+│   ├── validation.js    # Shared form field validation helpers
+│   ├── ui.js           # Shared UI components (avatars, badges, currency formatting)
+│   ├── nav.js          # Shared sidebar navigation, active state, theme, logout
+│   ├── toast.js        # Notification toast engine
+│   ├── data.js         # API fetch calls & data transformer
+│   ├── auth.js         # Auth logic for Sign Up and Login
+│   ├── clients.js      # Client page logic (CRUD, search, filters, modal notes)
+│   ├── dashboard.js    # Dashboard stat calculations & clock
+│   └── profile.js      # Profile update, password change, and reset logic
+├── ai-log.md           # AI Usage Log (Module: Use of Artificial Intelligence)
+├── glossary.md         # Technical English Glossary (Module: Technical English)
+└── research-note.md    # Technical Research Note (Module: Technical English)
 ```
 
 ## How to run locally
@@ -72,9 +79,8 @@ There's no shared backend, so there's no single pre-made test account — every 
 
 ## Live demo
 
-_[Add your deployed link here after deploying — see below.]_
+_[https://10-x-crm-ana-altunashvili-exam.vercel.app]_
 
-To deploy: create a free account on [Vercel](https://vercel.com) or [Netlify](https://netlify.com) and drag the project folder onto their dashboard (or connect the GitHub repo for automatic deploys). No build settings are needed since this is static HTML/CSS/JS.
 
 ## Security notes (by design, for a learning project)
 
@@ -82,6 +88,6 @@ To deploy: create a free account on [Vercel](https://vercel.com) or [Netlify](ht
 - The login error message ("Invalid email or password") is intentionally generic — it never reveals whether the email exists or the password was wrong, which prevents an attacker from using the login form to discover which emails are registered.
 - Deleting a manually-added client can return a `404` from the API, since DummyJSON never actually persisted it server-side. The client is still removed from local state regardless — see the comment in `js/data.js`.
 
-## Credits
+## Credits & & AI Disclosure
 
 Built with the assistance of Claude (Anthropic) — see `ai-log.md` for the prompt-by-prompt log of what was asked for, what was used as-is, and what was changed after review.
