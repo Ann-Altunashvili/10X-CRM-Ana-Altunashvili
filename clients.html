@@ -114,7 +114,16 @@
       <div class="details-row"><span>Deal Value</span><span id="details-deal"></span></div>
       <div class="details-since" id="details-since"></div>
 
-      <button class="btn btn-secondary btn-block" id="remind-btn" type="button">Remind me in 1 min</button>
+     <div class="reminder-row">
+        <select id="remind-time-select">
+          <option value="1">1 minute</option>
+          <option value="5">5 minutes</option>
+          <option value="15">15 minutes</option>
+          <option value="30">30 minutes</option>
+          <option value="60">1 hour</option>
+        </select>
+        <button class="btn btn-secondary" id="remind-btn" type="button">Set Reminder</button>
+      </div> 
 
       <h4 class="notes-heading">Notes</h4>
       <div id="notes-list" class="notes-list"></div>

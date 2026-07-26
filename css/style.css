@@ -833,6 +833,25 @@ button, input, select {
   font-style: italic;
 }
 
+.reminder-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.reminder-row select {
+  flex: 1;
+  padding: 9px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 13.5px;
+  font-family: var(--font-body);
+}
+.reminder-row button {
+  flex-shrink: 0;
+}
+
 .notes-heading {
   font-size: 14px;
   margin: 18px 0 10px;

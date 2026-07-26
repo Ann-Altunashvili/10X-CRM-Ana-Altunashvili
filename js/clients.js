@@ -384,13 +384,20 @@ function handleRemindMe() {
   if (!client) return;
 
   const name = client.name;
-  showToast('Reminder set ✓', 'success');
+  const select = document.getElementById('remind-time-select');
+  const minutes = Number(select.value);
+  const label = select.options[select.selectedIndex].text; // e.g. "5 minutes", reuses the option's own text
+  const delayMs = minutes * 60 * 1000;
+
+  showToast(`Reminder set for ${label} ✓`, 'success');
 
   // Fires even if the modal (or the whole page's focus) has moved on —
   // the timer lives independently of the modal's open/closed state.
   setTimeout(() => {
-    showToast(`⏰ Follow up: ${name}`, 'success');
-  }, 60000);
+    // Longer duration (10s vs. the usual 3s default) — this is the one
+    // toast a user genuinely needs time to notice and react to.
+    showToast(`⏰ Follow up: ${name}`, 'success', 10000);
+  }, delayMs);
 }
 
 function initDetailsModal() {
