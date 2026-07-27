@@ -262,7 +262,7 @@ button, input, select {
   display: none;
 }
 
-.field.input-error .field-error {
+.field.input-error .field-error:not(:empty) {
   display: block;
 }
 

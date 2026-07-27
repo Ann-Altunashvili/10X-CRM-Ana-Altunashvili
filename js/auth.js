@@ -128,6 +128,7 @@ function initLoginForm() {
     const user = users.find((u) => u.email === email && u.password === password);
 
     if (!user) {
+      setFieldError('loginEmail', '');
       setFieldError('loginPassword', 'Invalid email or password');
       hasError = true;
     }
