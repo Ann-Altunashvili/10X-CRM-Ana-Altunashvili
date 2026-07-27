@@ -18,6 +18,7 @@ function setFieldError(name, message) {
   if (!wrapper || !errorEl) return;
   wrapper.classList.add('input-error');
   errorEl.textContent = message;
+  errorEl.classList.toggle('has-message', message !== '');
 }
 
 function clearFieldError(name) {
@@ -26,6 +27,7 @@ function clearFieldError(name) {
   if (!wrapper || !errorEl) return;
   wrapper.classList.remove('input-error');
   errorEl.textContent = '';
+  errorEl.classList.remove('has-message');
 }
 
 function clearAllFieldErrors(names) {
