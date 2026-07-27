@@ -65,10 +65,13 @@ function statCardHtml(label, value) {
 // ============================================================================
 
 function renderPipeline(clientList) {
-  const counts = { Lead: 0, Contacted: 0, Won: 0, Lost: 0 };
-  clientList.forEach((c) => {
-    if (counts[c.status] !== undefined) counts[c.status] += 1;
-  });
+  const counts = clientList.reduce((acc, c) => {
+    if (acc[c.status] !== undefined) {
+      acc[c.status] += 1;
+    }
+    return acc;
+  }, { Lead: 0, Contacted: 0, Won: 0, Lost: 0 });
+
   const total = clientList.length || 1; // avoid divide-by-zero on an empty list
 
   const segments = STATUSES.map((status) => {
