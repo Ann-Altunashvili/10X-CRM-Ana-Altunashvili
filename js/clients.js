@@ -275,10 +275,10 @@ async function handleAddSubmit(e) {
   submitBtn.textContent = 'Adding...';
 
   try {
-    const apiResponse = await addClientToAPI({ firstName: name, email, phone, company });
+  await addClientToAPI({ firstName: name, email, phone, company });
 
-    const newClient = {
-      id: apiResponse.id,
+  const newClient = {
+      id: Date.now(), // temporary ID until API returns a real one
       name,
       email,
       phone,
